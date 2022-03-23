@@ -24,7 +24,9 @@ btnCheck.addEventListener("click", function () {
   //   1.check for empty value
   if (!guess) {
     messageDisplay("No number!🤦‍♂️");
-  } else if (secretNumber === guess) {
+  }
+  //   check if number is correct
+  else if (secretNumber === guess) {
     if (score > highscore) {
       highscore = score;
       highScoreLabel.textContent = highscore;
@@ -34,16 +36,20 @@ btnCheck.addEventListener("click", function () {
     displayMessage.textContent = "Correct answer 🏆🏆";
 
     displayNumber.textContent = guess;
-  } else if (secretNumber !== guess) {
+  }
+  //   check if number is incorrect
+  else if (secretNumber !== guess) {
     if (score > 0) {
       messageDisplay(
         guess > secretNumber
           ? `You guess is too high ⬆`
           : `Your guess is to low ⬇`
       );
+      score--;
+
+      valueScore.textContent = score;
     }
-    score--;
-    valueScore.textContent = score;
-    // valueScore.textContent = score;
   }
 });
+
+// reset the game using the again button

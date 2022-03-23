@@ -6,7 +6,7 @@ const displayNumber = document.querySelector(".number");
 const displayGuess = document.querySelector(".guess");
 const displayMessage = document.querySelector(".message");
 const ScoreLabel = document.querySelector(".label-score");
-const valueScore = document.querySelector(".score");
+let valueScore = document.querySelector(".score");
 const highScoreLabel = document.querySelector(".highscore");
 const bodyEl = document.querySelector("body");
 
@@ -53,3 +53,14 @@ btnCheck.addEventListener("click", function () {
 });
 
 // reset the game using the again button
+btnAgain.addEventListener("click", function () {
+  //   secretNumber = Math.trunc(Math.random() * 20 + 1);
+  score = 20;
+  valueScore.textContent = score;
+
+  displayGuess.value = "";
+  bodyEl.style.background = "#222";
+  displayNumber.style.width = "15rem";
+  messageDisplay("Start guessing...");
+  displayNumber.textContent = "?";
+});

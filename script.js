@@ -6,7 +6,7 @@ const displayNumber = document.querySelector(".number");
 const displayGuess = document.querySelector(".guess");
 const displayMessage = document.querySelector(".message");
 const ScoreLabel = document.querySelector(".label-score");
-const labelScore = document.querySelector(".score");
+const valueScore = document.querySelector(".score");
 const highScoreLabel = document.querySelector(".highscore");
 const bodyEl = document.querySelector("body");
 
@@ -35,6 +35,15 @@ btnCheck.addEventListener("click", function () {
 
     displayNumber.textContent = guess;
   } else if (secretNumber !== guess) {
-    ScoreLabel.textContent = score--;
+    if (score > 0) {
+      messageDisplay(
+        guess > secretNumber
+          ? `You guess is too high ⬆`
+          : `Your guess is to low ⬇`
+      );
+    }
+    score--;
+    valueScore.textContent = score;
+    // valueScore.textContent = score;
   }
 });

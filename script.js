@@ -20,6 +20,10 @@ const messageDisplay = function (message) {
 
 btnCheck.addEventListener("click", function () {
   const guess = +displayGuess.value;
+  //   1.check for empty value
+  if (!guess) {
+    messageDisplay("No number!🤦‍♂️");
+  }
   if (guessNumber === guess) {
     displayNumber.textContent = guess;
   }

@@ -54,7 +54,7 @@ btnCheck.addEventListener("click", function () {
 
 // reset the game using the again button
 btnAgain.addEventListener("click", function () {
-  //   secretNumber = Math.trunc(Math.random() * 20 + 1);
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
   score = 20;
   valueScore.textContent = score;
 
